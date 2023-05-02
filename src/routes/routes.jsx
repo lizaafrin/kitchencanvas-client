@@ -6,6 +6,7 @@ import ChefInfo from "../pages/Home/ChefInfo";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Register/Register";
 import Register from "../pages/Register/Register";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             element: <ChefInfo></ChefInfo>,
           },
         ],
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/blog",

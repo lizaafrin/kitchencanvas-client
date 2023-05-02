@@ -97,14 +97,14 @@ const Register = () => {
           <div className="text-center">
             <button
               type="submit"
-              class="bg-amber-500 focus:outline-none font-medium rounded-lg text-sm w-full mt-10 px-5 py-2.5 text-center"
+              class="bg-green-500 hover:bg-green-600 focus:outline-none font-medium rounded-lg text-sm w-full mt-10 px-5 py-2.5 text-center"
             >
               Create an account
             </button>
             <div className="mt-4">
               <p>
                 Already have an account?
-                <Link to="/login" className="underline ml-2 text-amber-500">
+                <Link to="/login" className="underline ml-2 text-green-500">
                   Login
                 </Link>
               </p>

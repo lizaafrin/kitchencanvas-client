@@ -61,21 +61,21 @@ const Login = () => {
           </div>
 
           <div>
-            <Link className="underline text-amber-500">Forgot Password?</Link>
+            <Link className="underline text-green-500">Forgot Password?</Link>
           </div>
         </div>
 
         <div className="text-center">
           <button
             type="submit"
-            className="bg-amber-500 focus:outline-none font-medium rounded-lg text-sm w-full block py-2.5"
+            className="bg-green-500 hover:bg-green-600 focus:outline-none font-medium rounded-lg text-sm w-full block py-2.5"
           >
             Login
           </button>
           <div className="mt-4">
             <p>
               Don’t have an account?
-              <Link to="/register" className="underline ml-2 text-amber-500">
+              <Link to="/register" className="underline ml-2 text-green-500">
                 Create an account
               </Link>
             </p>
