@@ -6,7 +6,6 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        abhaya: ["Abhaya Libre", "serif"],
       },
     },
   },

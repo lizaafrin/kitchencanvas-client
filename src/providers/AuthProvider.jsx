@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const AuthProvider = () => {
   return (
     <div>
-      
+      <h2>This is auth</h2>
     </div>
   );
 };
