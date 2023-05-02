@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCuttlefish, FaKickstarterK } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,7 +8,10 @@ const Footer = () => {
         <div>
           <h2 className="font-bold text-3xl">KitchenCanvas</h2>
           <p>Providing reliable service since 2010</p>
-          <img src="/src/assets/Icons/footer.png" alt="" />
+          <div className="flex py-2 items-center">
+            <FaKickstarterK className="ms-0 text-4xl text-green-500"></FaKickstarterK>
+            <FaCuttlefish className="ms-0 text-4xl text-green-500"></FaCuttlefish>
+          </div>
         </div>
         <div>
           <span className="footer-title">Company</span>

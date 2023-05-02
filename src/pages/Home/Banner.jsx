@@ -1,7 +1,11 @@
 import React from "react";
-import banner_1 from "../../assets/food_banner_1.jpg";
-import banner_2 from "../../assets/food_banner_2.jpg";
-import banner_3 from "../../assets/food_banner_3.jpg";
+import pasta_banner from "../../../public/pasta_banner.jpg";
+import dumplings from "../../../public/dumpling.jpg";
+import soup from "../../../public/hotnSourSoup.jpg";
+import chicken from "../../../public/kungfaoChicken.jpg";
+import pancake from "../../../public/scallionPancakes.jpg";
+import broccoli from "../../../public/beefandbroccoli.jpg";
+import tofu from "../../../public/mapoTofu.jpg";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -14,7 +18,7 @@ const Banner = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${banner_1}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,4))`,
+        backgroundImage: `url(${pasta_banner}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,4))`,
         backgroundBlendMode: "overlay",
       }}
       className="bg-cover bg-center min-h-screen text-white"
@@ -22,14 +26,15 @@ const Banner = () => {
       <div className="flex justify-between gap-10 w-full container mx-auto py-16 items-center">
         <div className="w-2/5">
           <h2 className="text-white text-6xl leading-tight tracking-tighter font-bold">
-            <span className="text-red-800">COOKING </span>IS A PIECE OF CAKE
+            <span className="text-green-500">COOKING </span>IS A PIECE OF CAKE
           </h2>
           <p className="text-white py-7">
-            Discover the art of cooking with our expert chefs and culinary
-            enthusiasts. From recipes to techniques, our website offers
-            everything you need to enhance your culinary skills...
+            From classic dishes to innovative new recipes, our website is your
+            ultimate guide to the world of cooking. Our expert chefs share their
+            knowledge and passion for food, giving you the confidence to create
+            unforgettable meals in your own kitchen.
           </p>
-          <button className="bg-amber-500 text-black px-6 py-2 rounded-md">
+          <button className="bg-green-500 text-black px-6 py-2 rounded-md hover:bg-green-600">
             Contact Us{" "}
             <FaLongArrowAltRight className="inline-block"></FaLongArrowAltRight>{" "}
           </button>
@@ -52,42 +57,42 @@ const Banner = () => {
             <SwiperSlide>
               <img
                 className="rounded-2xl object-cover h-[600px] w-full"
-                src={banner_3}
+                src={chicken}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 className="rounded-2xl object-cover h-[600px] w-full"
-                src={banner_2}
+                src={tofu}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 className="rounded-2xl object-cover h-[600px] w-full"
-                src={banner_3}
+                src={dumplings}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 className="rounded-2xl object-cover h-[600px] w-full"
-                src={banner_2}
+                src={soup}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 className="rounded-2xl object-cover h-[600px] w-full"
-                src={banner_3}
+                src={pancake}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 className="rounded-2xl object-cover h-[600px] w-full"
-                src={banner_2}
+                src={broccoli}
                 alt=""
               />
             </SwiperSlide>
