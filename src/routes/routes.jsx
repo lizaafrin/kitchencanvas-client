@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Register/Register";
 import Register from "../pages/Register/Register";
 import Contact from "../pages/Contact/Contact";
+import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
             element: <ChefInfo></ChefInfo>,
           },
         ],
+      },
+      {
+        path: "/:id",
+        element: <RecipeDetails></RecipeDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://chef-recipe-hunter-server-side-lizaafrin.vercel.app/${params.id}`
+          ),
       },
       {
         path: "/contact",
