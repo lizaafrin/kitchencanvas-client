@@ -1,10 +1,17 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBeer, FaUserCircle } from "react-icons/fa";
-import Banner from "../../Home/Banner";
 import ActiveLink from "../../../ActiveLink/ActiveLink";
+import React, { useContext, useState } from "react";
+import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <div className="navbar shadow-md bg-black px-10 py-5 text-white">
@@ -70,15 +77,51 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end mr-4">
+        {/* <div className="navbar-end mr-4">
           <Link className="hover:bg-green-400 px-4 py-3 rounded-lg" to="/login">
             Login{" "}
           </Link>
-        </div>
+        </div> 
         <div className="rounded-full">
           <FaUserCircle className="text-2xl"></FaUserCircle>
-        </div>
+        </div>*/}
 
+        <div className="navbar-end flex gap-4 mr-4">
+          {user ? (
+            <button
+              className="hover:bg-green-400 px-4 py-3 rounded-lg"
+              onClick={handleSignOut}
+            >
+              Sign out
+            </button>
+          ) : (
+            <Link
+              className="hover:bg-green-400 px-4 py-3 rounded-lg"
+              to="/login"
+            >
+              Login{" "}
+            </Link>
+          )}
+        </div>
+        <div>
+          <div className="flex-none gap-2">
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="rounded-full">
+                  {user ? (
+                    user?.photoURL ? (
+                      <img src={user?.photoURL} alt="userimage" srcset="" />
+                    ) : (
+                      <FaUserCircle className="text-2xl"></FaUserCircle>
+                    )
+                  ) : (
+                    <FaUserCircle className="text-2xl"></FaUserCircle>
+                  )}
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
         {/* <div>
           <div className="flex-none gap-2">
             <div className="dropdown dropdown-end">

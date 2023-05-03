@@ -1,12 +1,64 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import google from "../../../public/google-logos-idvNIQR3p7.svg";
+import React, { useContext, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProvider";
+import google from "../../../public/google-logos-idvNIQR3p7.svg";
 
 const Login = () => {
+  const { signIn, signInWithGoogle, setUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const emailRef = useRef();
+  const navigate = useNavigate();
+  const location = useLocation();
+  // console.log(location);
+  const from = location.state?.from?.pathname || "/";
+
+  // ---- Google signIn using firebase ------
+  const handleGoogleSignIn = (event) => {
+    event.preventDefault();
+    signInWithGoogle()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch(console.error());
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.floating_email?.value;
+    const password = form.floating_password?.value;
+    console.log(email, password);
+    setError("");
+
+    if (password.length < 6) {
+      setError("Password must be 6 characters or longer");
+      return;
+    }
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="container mx-auto">
-      <form className="bg-white p-10 lg:p-14  border-2 rounded-lg w-2/3 lg:w-2/5 mx-auto mt-16">
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-10 lg:p-14  border-2 rounded-lg w-2/3 lg:w-2/5 mx-auto mt-16"
+      >
         <h1 className="text-xl md:text-2xl font-bold leading-tight mb-5">
           Log in to your account
         </h1>
@@ -15,12 +67,13 @@ const Login = () => {
             type="email"
             name="floating_email"
             id="floating_email"
+            ref={emailRef}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
           <label
-            for="floating_email"
+            htmlFor="floating_email"
             className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
             Email address
@@ -36,7 +89,7 @@ const Login = () => {
             required
           />
           <label
-            for="floating_password"
+            htmlFor="floating_password"
             className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
             Password
@@ -53,7 +106,7 @@ const Login = () => {
               required
             />
             <label
-              for="remember"
+              htmlFor="remember"
               className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Remember me
@@ -61,21 +114,22 @@ const Login = () => {
           </div>
 
           <div>
-            <Link className="underline text-green-500">Forgot Password?</Link>
+            <Link className="underline text-amber-500">Forgot Password?</Link>
           </div>
         </div>
 
         <div className="text-center">
           <button
             type="submit"
-            className="bg-green-500 hover:bg-green-600 focus:outline-none font-medium rounded-lg text-sm w-full block py-2.5"
+            className="bg-amber-500 focus:outline-none font-medium rounded-lg text-sm w-full block py-2.5"
           >
             Login
           </button>
+          <p className="text-red-600">{error}</p>
           <div className="mt-4">
             <p>
               Don’t have an account?
-              <Link to="/register" className="underline ml-2 text-green-500">
+              <Link to="/register" className="underline ml-2 text-amber-500">
                 Create an account
               </Link>
             </p>
@@ -93,6 +147,7 @@ const Login = () => {
               <hr className="my-9 border-gray-300 w-1/2" />
             </div>
             <button
+              onClick={handleGoogleSignIn}
               type="button"
               className="w-full mb-5 block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
             >
