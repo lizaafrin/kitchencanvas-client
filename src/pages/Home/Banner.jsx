@@ -12,7 +12,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const Banner = () => {
   return (
@@ -34,7 +34,7 @@ const Banner = () => {
             knowledge and passion for food, giving you the confidence to create
             unforgettable meals in your own kitchen.
           </p>
-          <button className="bg-green-500 text-black px-6 py-2 rounded-md hover:bg-green-600">
+          <button className="bg-green-600 text-black px-6 py-2 rounded-md hover:bg-green-600">
             Contact Us{" "}
             <FaLongArrowAltRight className="inline-block"></FaLongArrowAltRight>{" "}
           </button>
