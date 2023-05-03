@@ -3,8 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.active-style,
-.badge {
+.active-style {
   @apply bg-green-600;
 }
 .card {

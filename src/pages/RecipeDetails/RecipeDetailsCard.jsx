@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 
-const RecipeDetailsCard = () => {
+const RecipeDetailsCard = (props) => {
+  const { cookingMethod, photoUrl, ingredients, rating, recipeName } =
+    props.value;
+
+  const [disabled, setDisabled] = useState(false);
+  const handleDisabled = () => {
+    setDisabled(!disabled);
+  };
+
   return (
-    <div>
-      <h2>This is recipe details card.</h2>
+    <div className="card card-compact w-full bg-base-100 shadow-xl">
+      <figure>
+        <img className="h-[270px] w-full object-cover" src={photoUrl} />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{recipeName}</h2>
+        <p className="font-semibold">
+          Ingredients:{" "}
+          <span className="font-normal text-sm">
+            {ingredients.toString().split(",").join(", ")}.
+          </span>
+        </p>
+        <p className="font-semibold">
+          Cooking Method:{" "}
+          <span className="font-normal text-sm">
+            {cookingMethod.split(" ").join("\n")}
+          </span>
+        </p>
+        <div className="card-actions justify-end">
+          <button
+            onClick={handleDisabled}
+            className={`btn border-none bg-green-600 ${
+              disabled ? "btn-disabled" : "btn-active"
+            }`}
+          >
+            Add to Favourite
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
