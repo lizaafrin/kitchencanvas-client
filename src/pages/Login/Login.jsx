@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
-import google from "/google-logos-idvNIQR3p7.svg";
+import google from "/google.png";
 
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGitHub, setUser } =
