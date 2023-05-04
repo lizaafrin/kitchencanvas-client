@@ -12,7 +12,7 @@ const ChefInfoCard = (props) => {
     <div className="card w-full bg-base-100 shadow-xl">
       <LazyLoad>
         <img
-          className="w-full h-[650px] object-cover rounded-lg"
+          className="w-full h-[400px] lg:h-[550px] object-cover rounded-lg"
           src={picture}
         />
       </LazyLoad>

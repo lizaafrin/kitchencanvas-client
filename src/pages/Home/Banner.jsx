@@ -1,11 +1,11 @@
 import React from "react";
-import pasta_banner from "../../../public/pasta_banner.jpg";
-import dumplings from "../../../public/dumpling.jpg";
-import soup from "../../../public/hotnSourSoup.jpg";
-import chicken from "../../../public/kungfaoChicken.jpg";
-import pancake from "../../../public/scallionPancakes.jpg";
-import broccoli from "../../../public/beefandbroccoli.jpg";
-import tofu from "../../../public/mapoTofu.jpg";
+import pasta_banner from "/pasta_banner.jpg";
+import dumplings from "/dumpling.jpg";
+import soup from "/hotnSourSoup.jpg";
+import chicken from "/kungfaoChicken.jpg";
+import pancake from "/scallionPancakes.jpg";
+import broccoli from "/beefandbroccoli.jpg";
+import tofu from "/mapoTofu.jpg";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -23,9 +23,9 @@ const Banner = () => {
       }}
       className="bg-cover bg-center min-h-screen text-white px-4"
     >
-      <div className="flex justify-between gap-10 w-full container mx-auto py-16 items-center">
-        <div className="w-2/5">
-          <h2 className="text-white text-6xl leading-tight tracking-tighter font-bold">
+      <div className="flex flex-col lg:flex-row justify-between gap-10 w-full container mx-auto py-16 items-center">
+        <div className="w-full px-5 lg:px-0 lg:w-2/5">
+          <h2 className="text-white text-4xl lg:text-6xl leading-tight tracking-tighter font-bold">
             <span className="text-green-500">COOKING </span>IS A PIECE OF CAKE
           </h2>
           <p className="text-white py-7">
@@ -39,7 +39,7 @@ const Banner = () => {
             <FaLongArrowAltRight className="inline-block"></FaLongArrowAltRight>{" "}
           </button>
         </div>
-        <div className="w-3/5 pb-6">
+        <div className="w-full px-2 lg:px-0 lg:w-3/5 pb-6">
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -56,42 +56,42 @@ const Banner = () => {
           >
             <SwiperSlide>
               <img
-                className="rounded-2xl object-cover h-[600px] w-full"
+                className="rounded-2xl object-cover h-[400px] lg:h-[600px] w-full"
                 src={chicken}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
-                className="rounded-2xl object-cover h-[600px] w-full"
+                className="rounded-2xl object-cover h-[400px] lg:h-[600px] w-full"
                 src={tofu}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
-                className="rounded-2xl object-cover h-[600px] w-full"
+                className="rounded-2xl object-cover h-[400px] lg:h-[600px] w-full"
                 src={dumplings}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
-                className="rounded-2xl object-cover h-[600px] w-full"
+                className="rounded-2xl object-cover h-[400px] lg:h-[600px] w-full"
                 src={soup}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
-                className="rounded-2xl object-cover h-[600px] w-full"
+                className="rounded-2xl object-cover h-[400px] lg:h-[600px] w-full"
                 src={pancake}
                 alt=""
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
-                className="rounded-2xl object-cover h-[600px] w-full"
+                className="rounded-2xl object-cover h-[400px] lg:h-[600px] w-full"
                 src={broccoli}
                 alt=""
               />

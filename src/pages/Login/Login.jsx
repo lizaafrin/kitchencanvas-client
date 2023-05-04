@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
-import google from "../../../public/google-logos-idvNIQR3p7.svg";
+import google from "/google-logos-idvNIQR3p7.svg";
 
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGitHub, setUser } =
@@ -65,10 +65,10 @@ const Login = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-2 lg:px-0">
       <form
         onSubmit={handleLogin}
-        className="bg-white p-10 lg:p-14  border-2 rounded-lg w-2/3 lg:w-2/5 mx-auto mt-16"
+        className="bg-white p-6 lg:p-10  border-2 rounded-lg w-full lg:w-2/5 mx-auto mt-16"
       >
         <h1 className="text-xl md:text-2xl font-bold leading-tight mb-5">
           Log in to your account

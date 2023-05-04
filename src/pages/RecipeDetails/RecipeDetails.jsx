@@ -18,10 +18,10 @@ const RecipeDetails = () => {
       <div>
         <ChefBanner value={singleChefData}></ChefBanner>
       </div>
-      <h2 className="text-center text-3xl font-bold my-8">
+      <h2 className="text-center text-3xl lg:text-4xl px-1 lg:px-0 font-bold my-8">
         3 best dishes of <span className="text-green-500">{name}</span>
       </h2>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+      <div className="grid lg:grid-cols-3 grid-cols-1 px-2 lg:px-0 gap-8">
         {recipeData.slice(0, 3).map((recipe) => (
           <RecipeDetailsCard
             key={recipe.recipeName}

@@ -15,7 +15,7 @@ const Header = () => {
   };
   return (
     <div>
-      <div className="navbar shadow-md bg-black px-10 py-5 text-white">
+      <div className="navbar shadow-md bg-black lg:px-10 py-5 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -55,7 +55,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <p className="font-bold text-4xl">
+          <p className="font-bold text-2xl lg:text-4xl">
             Kitchen<span className="text-green-500">Canvas</span>
           </p>
         </div>
@@ -90,14 +90,14 @@ const Header = () => {
         <div className="navbar-end flex gap-4 mr-4">
           {user ? (
             <button
-              className="hover:bg-green-400 px-4 py-3 rounded-lg"
+              className="hover:bg-green-400 lg:px-4 py-3 rounded-lg"
               onClick={handleSignOut}
             >
               Sign out
             </button>
           ) : (
             <Link
-              className="hover:bg-green-400 px-4 py-3 rounded-lg"
+              className="hover:bg-green-400 lg:px-4 py-3 rounded-lg"
               to="/login"
             >
               Login{" "}

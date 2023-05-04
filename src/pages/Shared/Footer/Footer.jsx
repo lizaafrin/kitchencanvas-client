@@ -14,33 +14,47 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <span className="footer-title">Company</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <span className="footer-title">Catering</span>
+
+          <a className="link link-hover">Corporate Events</a>
+
+          <a className="link link-hover">Weddings And Galas</a>
+
+          <a className="link link-hover">Special Events</a>
+
+          <a className="link link-hover">Cooking Classes</a>
         </div>
+
         <div>
-          <span className="footer-title">Product</span>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <span className="footer-title">About us</span>
+
+          <a className="link link-hover">Our Blog</a>
+
+          <a className="link link-hover">Our Team</a>
+
+          <a className="link link-hover">Shop</a>
         </div>
+
         <div>
-          <span className="footer-title">Support</span>
-          <a className="link link-hover">Help Desk</a>
-          <a className="link link-hover">Sales</a>
-          <a className="link link-hover">Become a Partner</a>
-          <a className="link link-hover">Developers</a>
+          <span className="footer-title">What We Offer</span>
+
+          <a className="link link-hover">Pricing</a>
+
+          <a className="link link-hover">Testimonials</a>
+
+          <a className="link link-hover">Baking School</a>
+
+          <a className="link link-hover">Our Recipes</a>
         </div>
+
         <div>
           <span className="footer-title">Contact</span>
+
           <a className="link link-hover">
-            28/F, 1 Peking Road, <br></br>Tsim Sha Tsui, <br></br> Kowloon, Hong
-            Kong
+            G/F, 165 Temple Street, Jordan, Hong Kong
           </a>
-          <a className="link link-hover">(852) 3428 8342</a>
+
+          <a className="link link-hover">+ (0998) 282 44</a>
         </div>
       </footer>
     </div>

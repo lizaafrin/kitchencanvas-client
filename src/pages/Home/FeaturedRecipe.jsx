@@ -1,19 +1,19 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import chicken from "../../../public/kungfaoChicken.jpg";
+import chicken from "/kungfaoChicken.jpg";
 
 const FeaturedRecipe = () => {
   return (
     <div>
-      <h2 className="font-bold text-center my-16 text-5xl">
+      <h2 className="font-bold text-center my-10 lg:my-16 text-4xl lg:text-5xl">
         Our Best <span className="text-green-600">Recipe</span>
       </h2>
 
-      <div className="flex flex-col items-center lg:flex-row  container gap-10 mx-auto px-10">
-        <div className="w-2/4">
+      <div className="flex flex-col items-center lg:flex-row  container gap-10 mx-auto px-2 lg:px-10">
+        <div className="w-full lg:w-2/4">
           <img className="rounded-lg" src={chicken} alt="" />
         </div>
-        <div className="w-2/4">
+        <div className="lg:w-2/4 px-3 lg:px-0">
           <h2 className="text-black text-5xl leading-tight tracking-tighter font-bold">
             Taste The <span className="text-green-600">Best!</span>
           </h2>

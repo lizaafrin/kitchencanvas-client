@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import google from "../../../public/google-logos-idvNIQR3p7.svg";
+import google from "/google-logos-idvNIQR3p7.svg";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -60,10 +60,10 @@ const Register = () => {
 
   return (
     <div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2 lg:px-0">
         <form
           onSubmit={handleRegister}
-          className="bg-white p-10 lg:p-14  border-2 rounded-lg w-2/3 lg:w-2/5 mx-auto my-16"
+          className="bg-white p-10 lg:p-14  border-2 rounded-lg w-full lg:w-2/5 mx-auto my-10 lg:my-16"
         >
           <h1 className="text-xl md:text-2xl font-bold leading-tight mb-5">
             Create an account
@@ -149,45 +149,10 @@ const Register = () => {
             <p className="text-red-600 py-4">{error}</p>
           </div>
 
-          {/* <div className="grid md:grid-cols-2 md:gap-6">
-            <div className="relative z-0 w-full mb-6 group">
-              <input
-                type="text"
-                name="floating_first_name"
-                id="floating_first_name"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                required
-              />
-              <label
-                htmlFor="floating_first_name"
-                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-              >
-                First name
-              </label>
-            </div>
-            <div className="relative z-0 w-full mb-6 group">
-              <input
-                type="text"
-                name="floating_last_name"
-                id="floating_last_name"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                required
-              />
-              <label
-                htmlFor="floating_last_name"
-                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-              >
-                Last name
-              </label>
-            </div>
-          </div> */}
-
           <div className="text-center">
             <button
               type="submit"
-              className="bg-amber-500 focus:outline-none font-medium rounded-lg text-sm w-full mt-10 px-5 py-2.5 text-center"
+              className="bg-amber-500 focus:outline-none font-medium rounded-lg text-sm w-full lg:mt-10 px-5 py-2.5 text-center"
             >
               Create an account
             </button>

@@ -11,11 +11,11 @@ const ChefInfo = () => {
 
   return (
     <div>
-      <h2 className="font-bold text-center my-16 text-5xl">
+      <h2 className="font-bold text-center my-16 text-4xl lg:text-5xl">
         Our <span className="text-green-500">Best Chefs</span>
       </h2>
 
-      <div className="grid px-10 gap-8 container mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid px-2 lg:px-10 gap-8 container mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {chefInfos.map((chefInfo) => (
           <ChefInfoCard key={chefInfo.chefId} value={chefInfo}></ChefInfoCard>
         ))}

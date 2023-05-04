@@ -1,5 +1,5 @@
 import React from "react";
-import pastabanner from "../../../public/pasta_banner.jpg";
+import pastabanner from "/pasta_banner.jpg";
 
 const Testimonials = () => {
   return (
@@ -15,7 +15,7 @@ const Testimonials = () => {
           className=" px-4 py-8 mx-auto text-center lg:py-16 lg:px-6"
         >
           <div className="mb-12">
-            <h2 className="font-bold text-white text-center mt-12 text-4xl">
+            <h2 className="font-bold text-white text-center lg:mt-12 text-3xl lg:text-4xl">
               What Customers<span className="text-red-800"></span> Are Saying
               About Us
             </h2>
@@ -33,7 +33,7 @@ const Testimonials = () => {
               />
             </svg>
             <blockquote>
-              <p className="text-2xl font-medium text-white">
+              <p className="text-xl lg:text-2xl font-medium text-white">
                 “Many thanks for the beautiful food and wonderful service. Your
                 food really made the event special. I appreciate your time and
                 effort!”
