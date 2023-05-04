@@ -45,7 +45,7 @@ const Header = () => {
               </li>
               <li>
                 <ActiveLink className="hover:bg-green-400" to="/contact">
-                  contact
+                  Contact
                 </ActiveLink>
               </li>
               <li>
@@ -68,7 +68,7 @@ const Header = () => {
             </li>
             <li>
               <ActiveLink className="hover:bg-green-400" to="/contact">
-                contact
+                Contact
               </ActiveLink>
             </li>
             <li>
@@ -78,15 +78,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        {/* <div className="navbar-end mr-4">
-          <Link className="hover:bg-green-400 px-4 py-3 rounded-lg" to="/login">
-            Login{" "}
-          </Link>
-        </div> 
-        <div className="rounded-full">
-          <FaUserCircle className="text-2xl"></FaUserCircle>
-        </div>*/}
-
         <div className="navbar-end flex gap-4 mr-4">
           {user ? (
             <button
@@ -127,17 +118,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-        {/* <div>
-          <div className="flex-none gap-2">
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="rounded-full">
-                  <FaUserCircle className="text-2xl"></FaUserCircle>
-                </div>
-              </label>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

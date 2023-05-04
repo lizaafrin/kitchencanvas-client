@@ -1,6 +1,5 @@
 import React from "react";
 import pasta_banner from "/pasta_banner.jpg";
-import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -11,9 +10,9 @@ const Contact = () => {
       }}
       className="bg-cover bg-center min-h-screen text-white px-4 text-center"
     >
-      <div className="lg:pt-24 pt-10">
+      <div className="lg:pt-24 pt-10 mx-auto">
         <h2 className="text-white text-4xl lg:text-6xl leading-tight tracking-tighter font-bold">
-          <span className="text-green-500">COOKING </span>IS A PIECE OF CAKE
+          <span className="text-green-500">CONTACT </span>OUR SUPPORT TEAM
         </h2>
         <p className="text-white py-7">
           From classic dishes to innovative new recipes, our website is your
