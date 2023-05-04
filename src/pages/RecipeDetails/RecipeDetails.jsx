@@ -6,7 +6,7 @@ import ChefBanner from "./ChefBanner";
 
 const RecipeDetails = () => {
   const singleChefdata = useLocation().state;
-  const chefName = singleChefdata.name;
+  const chefName = singleChefdata?.name;
 
   console.log(singleChefdata);
 

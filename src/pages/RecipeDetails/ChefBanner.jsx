@@ -4,7 +4,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
 
 const ChefBanner = (props) => {
-  const singleChefData = props.value;
+  const singleChefData = props?.value;
   const { bio, chefId, likes, name, numOfRecipes, picture, yearOfExp } =
     singleChefData;
 
