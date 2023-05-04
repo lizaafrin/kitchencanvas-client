@@ -21,7 +21,7 @@ const Banner = () => {
         backgroundImage: `url(${pasta_banner}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,4))`,
         backgroundBlendMode: "overlay",
       }}
-      className="bg-cover bg-center min-h-screen text-white"
+      className="bg-cover bg-center min-h-screen text-white px-4"
     >
       <div className="flex justify-between gap-10 w-full container mx-auto py-16 items-center">
         <div className="w-2/5">
