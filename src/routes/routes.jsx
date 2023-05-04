@@ -54,11 +54,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/recipes/:id",
-        element: (
-          <PrivateRoute>
-            <RecipeDetails></RecipeDetails>
-          </PrivateRoute>
-        ),
+        element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>,
         loader: ({ params }) =>
           fetch(
             `https://chef-recipe-hunter-server-side-lizaafrin.vercel.app/${params.id}`

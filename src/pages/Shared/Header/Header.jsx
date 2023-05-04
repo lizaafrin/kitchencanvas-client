@@ -6,6 +6,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
 
   const handleSignOut = () => {
     logOut()
@@ -110,7 +111,11 @@ const Header = () => {
                 <div className="rounded-full">
                   {user ? (
                     user?.photoURL ? (
-                      <img src={user?.photoURL} alt="userimage" srcset="" />
+                      <img
+                        src={user?.photoURL}
+                        alt="userimage"
+                        title={user?.displayName}
+                      />
                     ) : (
                       <FaUserCircle className="text-2xl"></FaUserCircle>
                     )

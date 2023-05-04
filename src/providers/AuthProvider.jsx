@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
   const [recipeData, setRecipeData] = useState([]);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  console.log(user);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -53,7 +54,6 @@ const AuthProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => setchefInfo(data))
       .catch((err) => console.log(err));
-    setLoading(false);
   }, []);
   // console.log(chefInfo);
   useEffect(() => {
@@ -61,13 +61,13 @@ const AuthProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => setRecipeData(data))
       .catch((err) => console.log(err));
-    setLoading(false);
   }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       // console.log("Logged in user inside auth state Observer", loggedUser);
       setUser(loggedUser);
+      console.log(loggedUser);
       setLoading(false);
     });
     return () => {
