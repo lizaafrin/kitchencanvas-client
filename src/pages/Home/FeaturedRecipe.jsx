@@ -25,7 +25,7 @@ const FeaturedRecipe = () => {
             small, are special events among family and friends.
           </p>
           <button className="bg-green-500 text-black px-6 py-2 rounded-md">
-            Order Nows{" "}
+            Order Now{" "}
             <FaLongArrowAltRight className="inline-block"></FaLongArrowAltRight>{" "}
           </button>
         </div>
