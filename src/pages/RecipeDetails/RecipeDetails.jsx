@@ -5,24 +5,21 @@ import RecipeDetailsCard from "./RecipeDetailsCard";
 import ChefBanner from "./ChefBanner";
 
 const RecipeDetails = () => {
-  const singleChefdata = useLocation().state;
-  const chefName = singleChefdata?.name;
-
-  console.log(singleChefdata);
-
+  // const singleChefdata = useLocation().state;
   const { recipeData } = useContext(AuthContext);
-  // console.log(recipesData);
-  // const { id } = useParams();
-  // const singleChefData = useLoaderData();
-  // console.log(singleChefData);
+  // const chefName = singleChefdata?.name;
+
+  const { id } = useParams();
+  const singleChefData = useLoaderData();
+  const name = singleChefData.name;
 
   return (
     <div className="container mx-auto my-12">
       <div>
-        <ChefBanner value={singleChefdata}></ChefBanner>
+        <ChefBanner value={singleChefData}></ChefBanner>
       </div>
       <h2 className="text-center text-3xl font-bold my-8">
-        3 best dishes of <span className="text-green-500">{chefName}</span>
+        3 best dishes of <span className="text-green-500">{name}</span>
       </h2>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
         {recipeData.slice(0, 3).map((recipe) => (

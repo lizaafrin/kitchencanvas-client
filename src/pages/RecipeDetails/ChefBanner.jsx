@@ -8,7 +8,7 @@ const ChefBanner = (props) => {
   const { bio, chefId, likes, name, numOfRecipes, picture, yearOfExp } =
     singleChefData;
 
-  console.log(singleChefData);
+  // console.log(singleChefData);
 
   return (
     <div

@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const notify = () => toast("Added to Your Favourite List");
 
 const RecipeDetailsCard = (props) => {
   const { cookingMethod, photoUrl, ingredients, rating, recipeName } =
@@ -30,13 +34,16 @@ const RecipeDetailsCard = (props) => {
         </p>
         <div className="card-actions justify-end">
           <button
-            onClick={handleDisabled}
+            onClick={() => {
+              handleDisabled(), notify();
+            }}
             className={`btn border-none bg-green-600 ${
               disabled ? "btn-disabled" : "btn-active"
             }`}
           >
             Add to Favourite
           </button>
+          <ToastContainer autoClose={1500}></ToastContainer>
         </div>
       </div>
     </div>

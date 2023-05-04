@@ -20,9 +20,8 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         const loggedInUser = result.user;
-        console.log(loggedInUser);
+        // console.log(loggedInUser);
         setUser(loggedInUser);
-        form.reset();
         navigate(from, { replace: true });
       })
       .catch(console.error());
@@ -34,10 +33,9 @@ const Login = () => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
         setUser(loggedInUser);
-        form.reset();
         navigate(from, { replace: true });
       })
-      .catch(console.error());
+      .catch((error) => setError(error.message));
   };
 
   const handleLogin = (event) => {
@@ -62,7 +60,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
 
@@ -107,6 +105,7 @@ const Login = () => {
           >
             Password
           </label>
+          <p className="text-red-600 py-4">{error}</p>
         </div>
 
         <div className="flex items-center justify-between mb-6">
@@ -138,7 +137,6 @@ const Login = () => {
           >
             Login
           </button>
-          <p className="text-red-600">{error}</p>
           <div className="mt-4">
             <p>
               Don’t have an account?
