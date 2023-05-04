@@ -5,7 +5,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import google from "../../../public/google-logos-idvNIQR3p7.svg";
 
 const Login = () => {
-  const { signIn, signInWithGoogle, setUser } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGitHub, setUser } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const emailRef = useRef();
   const navigate = useNavigate();
@@ -17,6 +18,18 @@ const Login = () => {
   const handleGoogleSignIn = (event) => {
     event.preventDefault();
     signInWithGoogle()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch(console.error());
+  };
+  const handleGitHubSignIn = (event) => {
+    event.preventDefault();
+    signInWithGitHub()
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
@@ -157,6 +170,7 @@ const Login = () => {
               </div>
             </button>
             <button
+              onClick={handleGitHubSignIn}
               type="button"
               className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
             >

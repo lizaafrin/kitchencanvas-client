@@ -5,12 +5,22 @@ import { FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, signInWithGoogle, setUser, user } =
+  const { createUser, signInWithGoogle, signInWithGitHub, setUser, user } =
     useContext(AuthContext);
   const [error, setError] = useState("");
 
   const handleRegisterwithGoogle = () => {
     signInWithGoogle()
+      .then((result) => {
+        const loggedInUser = result.user;
+        setUser(loggedInUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch(console.error());
+  };
+  const handleRegisterwithGitHub = () => {
+    signInWithGitHub()
       .then((result) => {
         const loggedInUser = result.user;
         setUser(loggedInUser);
@@ -213,6 +223,7 @@ const Register = () => {
               </button>
               <button
                 type="button"
+                onClick={handleRegisterwithGitHub}
                 className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
               >
                 <div className="flex items-center">
