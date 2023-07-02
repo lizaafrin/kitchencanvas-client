@@ -23,5 +23,5 @@ Icon -> [React Icons](https://react-icons.github.io/react-icons)
 Hosted in Firebase -> https://chef-recipe-hunter-3bf76.web.app/
 
 
-## Build Your Career Template
+## Private Repo
 Github Private Repo -> https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-lizaafrin
